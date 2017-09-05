@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head_title %}{{block.super}} {% endblock head_title %}
+{% block content %}
+{{ block.super }}
+    <head>
+		<title>Proyecto NLP & Elecciones</title>
+        <link rel="stylesheet" href="main.css">
+	</head>
+    <body>
+        <h1 id="top"> Procesamiento Natural de Tuits {{html_var}}
+            {% if bool_item %}
+            <figcaption>Aventura con el lenguaje número {{num}}</figcaption>
+            {% endif %}
+        </h1>
+        
+        <p>Motivaci&#243n: Tweeter fortalece la dinAmica de opini&#243n frente a los temas sociales</p></blockquote>
+        <p>
+        {% for some_item in some_list %}
+            {% if some_item|divisibleby:"2" %}
+                Numero par:
+            {% endif %}
+
+            {{some_item}} </br> 
+
+        {% endfor %}
+        </p>
+        <p> some_item is {{some_item}} </p>
+    </body>
+{% endblock content %}

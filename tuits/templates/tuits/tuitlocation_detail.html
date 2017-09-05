@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block head_title %}Tuits | {{block.super}} {% endblock head_title %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>{{ object.location }} <small>{{ object.category }}</p>
+<p>{{ object.timestamp }} Updated {{ object.updated|timesince }}ago</p>
+
+{% endblock content %}

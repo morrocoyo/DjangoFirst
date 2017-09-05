@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ form.instance.name }} | Menú | {{block.super}} {% endblock head_title %}
+
+{% block content %}
+<h1> {{ form.instance.name }} </h1>
+<p> Location: {{ form.instance.restaurant.name }} </p>
+{% if form.instance.contents %}
+Contiene:
+<ul>
+    {% for item in form.instance.get_contents %}
+    <li> {{ item }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if form.instance.excludes %}
+Excluye:
+<ul>
+    {% for item in form.instance.get_excludes %}
+    <li> {{ item }} </li>
+    {% endfor %}
+</ul> 
+{% endif %}
+
+<hr/>
+<h3> Actualizar Información </h3>
+{% include 'snippets/form-snippet.html' with form=form %}          
+{% endblock %}

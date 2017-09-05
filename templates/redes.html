@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head_title %}Redes || {{block.super}} {% endblock head_title %}
+    {% block content %}
+    <h1> Ambiental </h1>
+        <p>
+        {% for t in TA %}
+            {{t}} </br></br>  
+
+        {% endfor %}
+        </p>
+    {% endblock content %}
+
+
+
+    

@@ -1,0 +1,24 @@
+certifi==2017.4.17
+chardet==3.0.4
+dj-database-url==0.4.2
+-e git://github.com/django/django.git@d17eaa868cd6911197dcd8b096c4f0418c47007e#egg=Django
+django-crispy-forms==1.6.1
+gunicorn==19.7.1
+idna==2.5
+inflection==0.3.1
+more-itertools==3.2.0
+numpy==1.12.1
+olefile==0.44
+pandas==0.20.1
+pandas-datareader==0.4.0
+Pillow==4.2.1
+psycopg2==2.7.3
+python-dateutil==2.6.0
+pytz==2017.2
+Quandl==3.2.0
+requests==2.17.3
+requests-file==1.4.2
+requests-ftp==0.3.1
+scipy==0.19.0
+six==1.10.0
+urllib3==1.21.1

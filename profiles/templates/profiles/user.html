@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ user.username }} | {{block.super}} {% endblock head_title %}
+
+{% block content %}
+<h1> {{ user.username }} </h1>
+{{ request.user.is_following.all }}
+{% if user.profile in request.user.profile.is_following.all %}
+    Está Siguiendo
+{% endif %}
+<p> {% include 'profiles/snippet/follow_form.html' with username=user.username is_following=is_following %} </p>
+<form class='form' method='GET' action='.'>
+    <input type='text' placeholder='search..' name='q' value='{{ request.GET.q }}'>
+    <button class='btn btn-default' type='submit'> Buscar </button>
+</form>
+
+{% if user.item_set.all.exists %}
+<hr/>
+{% if locations %}
+{% for rest in locations %}
+    <div class='row'>
+<!--<div class='col-sm-12' style='border: 1px solid #ccc; border-radius: 5px; margin-bottom:15px'>--> 
+    <div class='col-sm-12'>
+        <div class='thumbnail'>
+        <h4><b>{{ rest.title }}</b></h4>  
+        <p>{{ rest.location}} | {{ rest.category }}</p>
+            <p>
+                <ul>
+                    {% for item in rest.item_set.all %}
+                        <li><span style='margin-bottom:15px'>{{ item.name }} </span><br>
+                            {% for ing in item.get_contents %}
+                            <a href='{{ request.path }}?q={{ing}}'><span class='badge badge-default'> {{ing}} </span></a>
+                            {% endfor %}
+                            {% for ing in item.get_contents %}
+                            <span style='padding: 2px 4px;margin-right:4px; background-color:#ccc'> {{ing}} </span>
+                            {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    </div>
+    </div>
+{% endfor %}
+
+{% else %}
+<p class = 'lead'> Vacío </p>
+{% endif %}
+{% endif %}
+
+{% endblock content%}

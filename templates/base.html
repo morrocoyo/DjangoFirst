@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+<title> {% block head_title %}Proyecto NLP & Twtr {% endblock head_title %}</title>
+<h1 id="top">       
+{% include 'snippets/css.html' %}
+{{html_var}}
+</h1>
+</head>
+<body>    
+    <div class ='container' >
+    <h2> SubT.com <br> </h2>
+    {% include 'snippets/nav.html' %}
+    {% block content%}
+    hello there!
+    {% endblock content%}
+    </div> 
+{% include 'snippets/js.html' %}
+</body>
+</html>
+    
