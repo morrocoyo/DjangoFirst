@@ -1,4 +1,4 @@
-certifi==2017.4.17
+certifi==2022.12.7
 chardet==3.0.4
 dj-database-url==0.4.2
 -e git://github.com/django/django.git@d17eaa868cd6911197dcd8b096c4f0418c47007e#egg=Django
